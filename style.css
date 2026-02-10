@@ -42,3 +42,20 @@ ul {
 li {
     margin-bottom: 10px;
 }
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+nav a {
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+nav a:hover {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
