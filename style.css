@@ -1,52 +1,78 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
-  text-align: center;
-  margin-top: 30px;
+body {
+  background-color: #f4f6f8;
+  color: #222;
+  line-height: 1.6;
 }
 
+/* NAVBAR */
+nav {
+  background-color: #1f2937;
+  padding: 12px 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* MAIN CONTAINER */
 .container {
   max-width: 900px;
-  margin: 30px auto;
-  background: white;
-  padding: 25px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
 }
 
-.controls {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+/* HEADINGS */
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-input, select {
-  padding: 10px;
-  font-size: 16px;
-  flex: 1;
-}
-
-.word-card {
-  border-bottom: 1px solid #ddd;
-  padding: 15px 0;
-}
-
-.word-card h3 {
-  margin: 0;
-  color: #2c3e50;
-}
-
-.word-card span {
-  font-size: 14px;
+.subtitle {
+  text-align: center;
   color: #555;
-  margin-left: 10px;
+  margin-bottom: 40px;
 }
 
-.word-card p {
-  margin: 5px 0;
+/* SECTIONS */
+.section {
+  margin-bottom: 30px;
+}
+
+.section h2 {
+  margin-bottom: 10px;
+}
+
+.section p {
+  color: #444;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin: 40px 0 20px;
+  color: #777;
+  font-size: 14px;
 }
