@@ -1,72 +1,25 @@
 const dictionary = [
-    {
-        word: "stress",
-        level: "B1",
-        meaning: "A feeling of worry or pressure",
-        turkish: "stres",
-        example: "Students feel stress before exams."
-    },
-    {
-        word: "effect",
-        level: "A2",
-        meaning: "A result of an action",
-        turkish: "etki",
-        example: "Stress has a negative effect on health."
-    },
-    {
-        word: "advantage",
-        level: "A2",
-        meaning: "A good side of something",
-        turkish: "avantaj",
-        example: "Technology has many advantages."
-    }
+  // ===== A1 =====
+  { word: "student", level: "A1", meaning: "a person who studies", turkish: "öğrenci", example: "She is a university student." },
+  { word: "teacher", level: "A1", meaning: "a person who teaches", turkish: "öğretmen", example: "The teacher explained the topic." },
+  { word: "important", level: "A1", meaning: "very necessary", turkish: "önemli", example: "English is important for students." },
+  { word: "problem", level: "A1", meaning: "a difficult situation", turkish: "problem", example: "This is a serious problem." },
+
+  // ===== A2 =====
+  { word: "advantage", level: "A2", meaning: "a good side of something", turkish: "avantaj", example: "Living alone has some advantages." },
+  { word: "disadvantage", level: "A2", meaning: "a bad side of something", turkish: "dezavantaj", example: "There are disadvantages of technology." },
+  { word: "improve", level: "A2", meaning: "to make better", turkish: "geliştirmek", example: "Students can improve their English." },
+  { word: "effect", level: "A2", meaning: "a result of an action", turkish: "etki", example: "Stress has a negative effect." },
+
+  // ===== B1 =====
+  { word: "stress", level: "B1", meaning: "pressure or worry", turkish: "stres", example: "Students feel stress before exams." },
+  { word: "responsibility", level: "B1", meaning: "something you must do", turkish: "sorumluluk", example: "Students have many responsibilities." },
+  { word: "decision", level: "B1", meaning: "a choice you make", turkish: "karar", example: "He made an important decision." },
+  { word: "solution", level: "B1", meaning: "a way to solve a problem", turkish: "çözüm", example: "We need a solution to this issue." },
+
+  // ===== B1+ =====
+  { word: "consequence", level: "B1+", meaning: "a result of an action", turkish: "sonuç", example: "Stress can have serious consequences." },
+  { word: "significant", level: "B1+", meaning: "important or noticeable", turkish: "önemli", example: "Education plays a significant role." },
+  { word: "inevitable", level: "B1+", meaning: "cannot be avoided", turkish: "kaçınılmaz", example: "Stress is inevitable in modern life." },
+  { word: "contribute", level: "B1+", meaning: "to help cause something", turkish: "katkıda bulunmak", example: "Technology contributes to education." }
 ];
-
-async function translateWord() {
-    const input = document.getElementById("wordInput").value.toLowerCase().trim();
-    const resultDiv = document.getElementById("result");
-    resultDiv.innerHTML = "";
-
-    if (!input) return;
-
-    // 1️⃣ Önce kendi sözlüğünde ara
-    const found = dictionary.find(d => d.word === input);
-
-    if (found) {
-        resultDiv.innerHTML = `
-            <div class="word-card">
-                <h3>${found.word} <small>(${found.level})</small></h3>
-                <p><b>Meaning:</b> ${found.meaning}</p>
-                <p><b>Turkish:</b> ${found.turkish}</p>
-                <p><b>Example:</b> ${found.example}</p>
-            </div>
-        `;
-        return;
-    }
-
-    // 2️⃣ Sözlükte yoksa → genel çeviri (LibreTranslate)
-    try {
-        const res = await fetch("https://libretranslate.de/translate", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                q: input,
-                source: "en",
-                target: "tr",
-                format: "text"
-            })
-        });
-
-        const data = await res.json();
-
-        resultDiv.innerHTML = `
-            <div class="word-card">
-                <h3>${input}</h3>
-                <p><b>Translation:</b> ${data.translatedText}</p>
-                <p><i>This translation is automatic.</i></p>
-            </div>
-        `;
-    } catch (err) {
-        resultDiv.innerHTML = "<p>Translation service unavailable.</p>";
-    }
-}
