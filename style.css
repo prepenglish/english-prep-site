@@ -59,3 +59,37 @@ nav a:hover {
     background-color: #38bdf8;
     color: #0f172a;
 }
+/* ---------- CARDS ---------- */
+.card {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ---------- WORD ITEM ---------- */
+.word {
+    margin-bottom: 15px;
+}
+
+/* ---------- ESSAY ---------- */
+.essay-title {
+    color: #1e293b;
+}
+
+/* ---------- DARK MODE ---------- */
+.dark {
+    background-color: #0f172a;
+    color: #e5e7eb;
+}
+
+.dark nav {
+    background-color: #020617;
+}
+
+.dark .card {
+    background-color: #020617;
+    color: #e5e7eb;
+}
