@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>English Dictionary & Translator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>English Prep Word List</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="essay.html">Essays</a>
-    <a href="words.html">Dictionary</a>
-</nav>
+<h1>English Prep – B1+ Word List</h1>
 
-<h1 style="text-align:center;">English Dictionary & Translator</h1>
+<div class="container">
+  <div class="controls">
+    <input type="text" id="search" placeholder="Search a word...">
+    <select id="level">
+      <option value="all">All Levels</option>
+      <option value="A1">A1</option>
+      <option value="A2">A2</option>
+      <option value="B1">B1</option>
+      <option value="B1+">B1+</option>
+    </select>
+  </div>
 
-<div class="search-box">
-    <input type="text" id="wordInput" placeholder="Type a word or sentence">
-    <button onclick="translateWord()">Translate</button>
+  <div id="words"></div>
 </div>
-
-<div id="result" class="results"></div>
 
 <script src="words.js"></script>
 </body>
